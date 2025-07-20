@@ -73,3 +73,10 @@ def answer_query(q: str):
 
     except Exception as e:
         return f"Error processing query: {str(e)}"
+
+@app.get("/")
+def read_root():
+    return {
+        "message": "DataWise API running. Use /query?q=your-question to ask something.",
+        "example": "/query?q=What is the total sales of Pants in Mraztown?"
+    }
